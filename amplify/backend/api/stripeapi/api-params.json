@@ -1,0 +1,55 @@
+{
+    "paths": [
+        {
+            "name": "/checkout",
+            "lambdaFunction": "stripeCheckout",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/checkout"
+        },
+        {
+            "name": "/webhook",
+            "lambdaFunction": "stripeWebhook",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/webhook"
+        }
+    ],
+    "resourceName": "stripeapi",
+    "apiName": "stripeapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "stripeCheckout"
+        },
+        {
+            "lambdaFunction": "stripeWebhook"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-reactamplified-dev-164528-authRole",
+        "unAuthRoleName": "amplify-reactamplified-dev-164528-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "stripeCheckout",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "stripeWebhook",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "ae843ce0"
+}
