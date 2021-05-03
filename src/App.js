@@ -72,8 +72,8 @@ const App = () => {
         amount={550}
         currency="usd"
         quantity={1}
-        success_url="https://www.google.com" // Where to redirect if success
-        cancel_url="https://www.fail.com" // Where to go if payment canceled
+        success_url="http://localhost:3000" // Where to redirect if success
+        cancel_url="http://localhost:3000" // Where to go if payment canceled
       />
     </div>
   );
