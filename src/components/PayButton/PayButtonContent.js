@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Container, Button} from 'react-bootstrap'
 import "./PayButton.css";
 import PropTypes from "prop-types";
 import { API } from "aws-amplify";
@@ -44,22 +45,24 @@ const PaybuttonContent = (props) => {
         // error, display the localized error message to your customer
         // using `result.error.message`.
         console.log("result :" + result); //eslint disable line
+      }).catch(err => {
+        console.error(err);
       });
     setLoading(false);
   };
   return (
-    <div>
-      <button
+    <Container>
+      <Button
+        style={styles.button}
+        variant="primary"
         onClick={handlePay}
         disabled={loading}
-        variant="contained"
-        color="secondary"
       >
-        Pay ({parseFloat(Math.round(amount) / 100).toFixed(2)} {currency})
-      </button>
+        Pay {parseFloat(Math.round(amount) / 100).toFixed(2)}
+      </Button>
       <div />
       {loading ? <h1>Loading</h1> : null}
-    </div>
+    </Container>
   );
 };
 
@@ -77,5 +80,11 @@ PaybuttonContent.propTypes = {
   success_url: PropTypes.string.isRequired,
   cancel_url: PropTypes.string.isRequired,
 };
+
+const styles = {
+  button: {
+    width: "180px",
+  }
+}
 
 export default PaybuttonContent;
