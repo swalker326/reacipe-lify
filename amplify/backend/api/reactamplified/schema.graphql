@@ -1,3 +1,10 @@
+type Product @model {
+  id: ID!
+  name: String!
+  description: String
+  price: Int
+  images: [String]
+}
 type Todo @model {
   id: ID!
   name: String!
