@@ -6,9 +6,9 @@ import Products from "./components/Products/Products";
 import Todos from "./components/Todos/Todos";
 import "./App.scss";
 import { Nav, Navbar } from "react-bootstrap";
-import ProtectedApp from "./components/ProtectedApp"
+import ProtectedApp from "./components/ProtectedApp";
 import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-import { PersonCircle } from 'react-bootstrap-icons';
+import { PersonCircle } from "react-bootstrap-icons";
 
 const history = createBrowserHistory();
 
@@ -26,11 +26,10 @@ const App = () => {
           <Nav.Link as={Link} to="/products">
             Products
           </Nav.Link>
-          <Nav.Link as={Link} to="/admin">
-            <PersonCircle size={40} />
-          </Nav.Link>
-          
         </Nav>
+        <Nav.Link as={Link} to="/admin">
+          <PersonCircle size={40} color="#fff" />
+        </Nav.Link>
       </Navbar>
       <Switch>
         <Route exact path="/" render={() => <SplashScreen />} />
