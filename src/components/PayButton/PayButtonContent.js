@@ -6,8 +6,8 @@ import { API } from "aws-amplify";
 import { useStripe } from "@stripe/react-stripe-js";
 
 const PaybuttonContent = (props) => {
-  const [loading, setLoading] = useState(false);
   const {
+    setLoading,
     name,
     description,
     images,
@@ -32,7 +32,7 @@ const PaybuttonContent = (props) => {
       success_url,
       cancel_url,
     };
-    const response = await API.post(props.apiName, props.apiEndpoint, { body });
+    const response = await API.post(props.apiName, props.apiEndpoint, { body })
     stripe
       .redirectToCheckout({
         // Make the id field from the Checkout Session creation API response
@@ -51,17 +51,15 @@ const PaybuttonContent = (props) => {
     setLoading(false);
   };
   return (
-    <Container>
+    <Container style={styles.checkout_container}>
       <Button
         style={styles.button}
         variant="primary"
         onClick={handlePay}
-        disabled={loading}
       >
-        Pay {parseFloat(Math.round(amount) / 100).toFixed(2)}
+        Checkout {parseFloat(Math.round(amount) / 100).toFixed(2)}
       </Button>
       <div />
-      {loading ? <h1>Loading</h1> : null}
     </Container>
   );
 };
@@ -84,6 +82,10 @@ PaybuttonContent.propTypes = {
 const styles = {
   button: {
     width: "180px",
+  },
+  checkout_container: {
+    display: "flex",
+    justifyContent: "flex-end"
   }
 }
 

@@ -7,6 +7,7 @@ import PayButtonContent from "./PayButtonContent";
 
 const PayButton = (props) => {
   const {
+    setLoading,
     stripePublicKey,
     apiName,
     apiEndpoint,
@@ -25,6 +26,7 @@ const PayButton = (props) => {
   return (
     <Elements stripe={StripePromise}>
       <PayButtonContent
+        setLoading={setLoading}
         apiName={apiName}
         apiEndpoint={apiEndpoint}
         name={name}
