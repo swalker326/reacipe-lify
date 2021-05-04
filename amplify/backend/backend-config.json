@@ -50,5 +50,13 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "auth": {
+    "reactamplified77a61dae": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
   }
 }

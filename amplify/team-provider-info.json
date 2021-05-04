@@ -21,6 +21,9 @@
           "deploymentBucketName": "amplify-reactamplified-dev-164528-deployment",
           "s3Key": "amplify-builds/stripeWebhook-2f623075656448393049-build.zip"
         }
+      },
+      "auth": {
+        "reactamplified77a61dae": {}
       }
     }
   }
