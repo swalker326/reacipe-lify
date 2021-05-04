@@ -46,6 +46,9 @@ const SplashScreen = (props) => {
           <p>Above are some links to sample projects I've built. I've incorporated the the following technologies:</p>
           <ul>
             <li>React</li>
+              <ul>
+                <li>React Router</li>
+              </ul>
             <li>GraphQL</li>
             <li>Bootstrap</li>
             <li>Stripe</li>
@@ -54,6 +57,7 @@ const SplashScreen = (props) => {
                 <li>Amplify</li>
                 <li>Rest API</li>
                 <li>DynamoDB</li>
+                <li>Incognito</li>
               </ul>
             </li>
           </ul>
