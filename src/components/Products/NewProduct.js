@@ -26,13 +26,19 @@ const NewProduct = (props) => {
     }
     props.loading(false)
   };
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    addProduct();
+
+  }
   return (
     <Container className="NewProduct mt-5">
-      <Form>
+      <Form onSubmit={(evt) => handleSubmit(evt)}>
         <Row>
           <Col>
             <Form.Label>Name</Form.Label>
             <Form.Control
+              required
               className="mt-1 mb-1"
               onChange={(event) => setInput("name", event.target.value)}
               placeholder="Name"
@@ -42,14 +48,17 @@ const NewProduct = (props) => {
           <Col>
             <Form.Label>Price</Form.Label>
             <Form.Control
+              required
               className="mt-1 mb-1"
-              onChange={(event) => setInput("price", event.target.value)}
-              placeholder="9.99"
+              onChange={(event) => setInput("price", Number(event.target.value))}
+              placeholder="Price"
               value={formState.price}
             />
+            <Form.Text className="text-muted">If you want a price of 9.99 enter it as 999 or 100.99 becomes 10099</Form.Text>
           </Col>
         </Row>
         <Form.Control
+          required
           className="mt-1 mb-1"
           as="textarea"
           rows={5}
@@ -57,8 +66,8 @@ const NewProduct = (props) => {
           placeholder="Description"
           value={formState.description}
         />
+        <Button type='submit'>Add</Button>
       </Form>
-      <Button onClick={(evt) => addProduct(evt)}>Add</Button>
     </Container>
   );
 };

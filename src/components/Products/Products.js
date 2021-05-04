@@ -84,7 +84,7 @@ const Products = () => {
           apiName="stripeapi"
           apiEndpoint="/checkout"
           name={selectedProduct.name}
-          description={selectedProduct.desc}
+          description={selectedProduct.description}
           images={[selectedProduct.image]}
           amount={selectedProduct.price}
           currency="usd"
