@@ -8,7 +8,7 @@ export const getProduct = /* GraphQL */ `
       name
       description
       price
-      images
+      image
       createdAt
       updatedAt
     }
@@ -26,7 +26,7 @@ export const listProducts = /* GraphQL */ `
         name
         description
         price
-        images
+        image
         createdAt
         updatedAt
       }

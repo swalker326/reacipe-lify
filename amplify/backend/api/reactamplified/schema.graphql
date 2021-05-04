@@ -3,7 +3,7 @@ type Product @model {
   name: String!
   description: String
   price: Int
-  images: [String]
+  image: String
 }
 type Todo @model {
   id: ID!
