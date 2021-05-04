@@ -4,8 +4,7 @@ import { createBrowserHistory } from "history";
 import SplashScreen from "./components/SplashScreen";
 import Product from "./components/Products/Products";
 import Todos from "./components/Todos/Todos";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import "./App.scss";
 
 const history = createBrowserHistory();
 
