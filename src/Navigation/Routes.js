@@ -3,7 +3,7 @@ import ProductScreen from "../Screens/ProductScreen";
 import LoginScreen from "../Screens/LoginScreen"
 
 
-export const routes = [
+export const Routes = [
   {
     title: "Home",
     path: "/",
