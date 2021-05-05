@@ -1,5 +1,5 @@
 import React from "react";
-import "./PayButton.css";
+import "./PayButton.scss";
 import PropTypes from "prop-types";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
