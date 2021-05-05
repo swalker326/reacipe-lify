@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 //Local Impots
-import Products from '../Components/Products/Products';
+import Products from '../components/products/Products';
 
 const ProductScreen = () => {
 return(

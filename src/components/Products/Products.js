@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import PayButton from "../PayButton/PayButton";
+import PayButton from "../paybutton/PayButton";
 // import NewProduct from "./NewProduct";
 import { listProducts } from "../../graphql/queries";
 import awsExports from "../../aws-exports";

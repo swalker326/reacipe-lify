@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import AppNavigation from "./Navigation/AppNavigation";
+import AppNavigation from "./navigation/AppNavigation";
 
 const App = () => {
   return (

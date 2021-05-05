@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import { createBrowserHistory } from "history";
-import AppHeader from "../Components/AppHeader";
+import AppHeader from "../components/AppHeader";
 import { Routes } from "./Routes";
 import { Router, Route, Switch, Link, Redirect } from "react-router-dom";
 

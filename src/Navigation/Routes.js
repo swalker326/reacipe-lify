@@ -1,6 +1,6 @@
-import SplashScreen from "../Screens/SplashScreen";
-import ProductScreen from "../Screens/ProductScreen";
-import LoginScreen from "../Screens/LoginScreen"
+import SplashScreen from "../screens/SplashScreen";
+import ProductScreen from "../screens/ProductScreen";
+import LoginScreen from "../screens/LoginScreen"
 
 
 export const Routes = [
