@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {Container, Button} from 'react-bootstrap'
 import "./PayButton.css";
 import PropTypes from "prop-types";

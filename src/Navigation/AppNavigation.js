@@ -1,23 +1,12 @@
-import React from "react";
+import React from 'react'
+import { Container } from 'react-bootstrap'
 import { Router, Route, Switch, Link, Redirect } from "react-router-dom";
-import { createBrowserHistory } from "history";
-import SplashScreen from "./Screens/SplashScreen";
-import Products from "./Components/Products/Products";
-import Todos from "./Components/Todos/Todos";
-import "./App.scss";
-import { Nav, Navbar, Container, Col } from "react-bootstrap";
-import ProtectedApp from "./Components/ProtectedApp";
-import Login from "./auth/Login";
-import Profile from "./user/Profile";
-import { PersonCircle } from "react-bootstrap-icons";
-import { useUser } from "./state/hooks/userContext";
 
-const history = createBrowserHistory();
+//Local Impots
 
-const App = () => {
-  const { user } = useUser();
-  return (
-    <Router history={history}>
+const AppNavigation = () => {
+return(
+     <Router history={history}>
       <Navbar className="mb-5" bg="primary" variant="dark">
         <Navbar.Brand as={Link} to="/">
           Swalker.Dev
@@ -48,7 +37,8 @@ const App = () => {
         {/* <Route render={() => <Redirect to="/" />} /> */}
       </Switch>
     </Router>
-  );
-};
+     
+ )
+}
 
-export default App;
+export default AppNavigation

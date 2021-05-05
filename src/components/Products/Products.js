@@ -102,16 +102,4 @@ const Products = () => {
   );
 };
 
-const styles = {
-  productCard: {
-    height: "400px",
-    color: "red",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-      color: "blue",
-    },
-  },
-};
-
 export default Products;
