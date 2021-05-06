@@ -1,12 +1,13 @@
 import React from "react";
 import "./App.scss";
-import AppNavigation from "./navigation/AppNavigation";
+import AppNavigation from "./Navigation/AppNavigation";
+import { AuthProvider } from './Components/Context/authContext';
 
 const App = () => {
   return (
-    <div>
+    <AuthProvider>
       <AppNavigation />
-    </div>
+    </AuthProvider>
   );
 };
 

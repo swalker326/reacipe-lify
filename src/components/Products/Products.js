@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Col, Row, Card } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import PayButton from "../paybutton/PayButton";
+import PayButton from "../PayButton/PayButton";
 // import NewProduct from "./NewProduct";
 import { listProducts } from "../../graphql/queries";
 import awsExports from "../../aws-exports";
@@ -89,8 +89,8 @@ const Products = () => {
           amount={selectedProduct.price}
           currency="usd"
           quantity={1}
-          success_url="https://example.com/success?session_id={CHECKOUT_SESSION_ID}" // Where to redirect if success
-          cancel_url="https://example.com/cancel" // Where to go if payment canceled
+          success_url="http://localhost:3000/" // Where to redirect if success
+          cancel_url="http://localhost:3000/products" // Where to go if payment canceled
         />
       ) : null}
       {/* <Row>

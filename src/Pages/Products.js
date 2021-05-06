@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 //Local Impots
-import Products from '../components/products/Products';
+import Products from '../Components/Products/Products';
 
 const ProductScreen = () => {
 return(
@@ -12,5 +12,3 @@ return(
 }
 
 export default ProductScreen
-
-{/* styles  */}

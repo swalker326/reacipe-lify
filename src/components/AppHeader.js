@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Col, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PersonCircle } from "react-bootstrap-icons";
+import { useAuthState } from "./Context/authContext";
 
 //Local Impots
 
 const AppHeader = () => {
+  const { userEmail } = useAuthState();
+
   return (
     <Navbar className="mb-5" bg="primary" variant="dark">
       <Navbar.Brand as={Link} to="/">
@@ -23,7 +26,7 @@ const AppHeader = () => {
         <Container className="">
           <Col style={{ textAlign: "center" }}>
             <PersonCircle size={40} color="#fff" />
-            {/* <h6 style={{ color: "#fff" }}>{user?.attributes.email}</h6> */}
+            <h6 style={{ color: "#fff" }}>{userEmail}</h6>
           </Col>
         </Container>
       </Nav.Link>
@@ -32,7 +35,3 @@ const AppHeader = () => {
 };
 
 export default AppHeader;
-
-{
-  /* styles  */
-}

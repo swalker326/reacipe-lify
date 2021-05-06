@@ -1,9 +1,8 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import { createBrowserHistory } from "history";
-import AppHeader from "../components/AppHeader";
+import AppHeader from "../Components/AppHeader";
 import { Routes } from "./Routes";
-import { Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 
 //Local Impots
 const history = createBrowserHistory();
