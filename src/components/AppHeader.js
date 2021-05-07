@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container, Col, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { PersonCircle } from "react-bootstrap-icons";
-import { useAuthState } from "./Context/authContext";
+import { useAuthState } from "../Context/authContext";
 
 //Local Impots
 

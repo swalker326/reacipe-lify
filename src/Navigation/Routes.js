@@ -1,8 +1,9 @@
 import SplashScreen from "../Pages/Splash";
 import ProductScreen from "../Pages/Products";
-import Login from "../Pages/Login";
+import Login from "../Pages/Auth/Login";
 import Profile from "../Pages/Profile";
 import Todos from "../Pages/Todos";
+import Signup from "../Pages/Auth/Signup";
 
 export const Routes = [
   {
@@ -34,9 +35,16 @@ export const Routes = [
     private: true,
   },
   {
-    title: "Todo,s",
+    title: "Todo's",
     path: "/todos",
     component: Todos,
+    exact: false,
+    private: false,
+  },
+  {
+    title: "Sign Up",
+    path: "/signup",
+    component: Signup,
     exact: false,
     private: false,
   },

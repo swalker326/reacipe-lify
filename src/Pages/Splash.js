@@ -37,6 +37,9 @@ const SplashScreen = (props) => {
             <li>
               <Link to="/todos"> Todo's</Link>
             </li>
+            <li>
+              <Link to="/login"> Login</Link>
+            </li>
           </ul>
         </Container>
       </Row>
@@ -50,6 +53,14 @@ const SplashScreen = (props) => {
             <li>React</li>
             <ul>
               <li>React Router</li>
+              <li>App wide state management with useContext and useReducer</li>
+              <li>React Hooks</li>
+              <ul>
+                <li>useState</li>
+                <li>useEffect</li>
+                <li>useContext</li>
+                <li>useReducer</li>
+              </ul>
             </ul>
             <li>GraphQL</li>
             <li>Bootstrap</li>
@@ -70,6 +81,69 @@ const SplashScreen = (props) => {
             in a real world application.
           </p>
         </Container>
+      </Row>
+      <Row>
+        <Col>
+          <Container>
+            <h4>The structure of this project is as follows:</h4>
+            <ul>
+              <li>
+                {" "}
+                src/
+                <ul>
+                  <li>
+                    Components/
+                    <ul>
+                      <li>
+                        PayButton/
+                        <ul>
+                          <li>PayButton.js</li>
+                          <li>PayButton.scss</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>AppHeader.js</li>
+                  <li>
+                    Context/
+                    <ul>
+                      <li>authContext.js</li>
+                      <li>authReducer.js</li>
+                      <li>authServices.js</li>
+                    </ul>
+                  </li>
+                  <li>
+                    graphql/
+                    <ul>
+                      <li>mutations.js</li>
+                      <li>queries.js</li>
+                      <li>schema.json</li>
+                      <li>subscriptions.js</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Navigation/
+                    <ul>
+                      <li>AppNavigation.js</li>
+                      <li>PrivateRoute.js</li>
+                      <li>Routes.js</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Pages/
+                    <ul>
+                      <li>Login.js</li>
+                      <li>Products.js</li>
+                      <li>Profile.js</li>
+                      <li>Splash.js</li>
+                      <li>Todos.js</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </Container>
+        </Col>
       </Row>
     </Col>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.scss";
 import AppNavigation from "./Navigation/AppNavigation";
-import { AuthProvider } from './Components/Context/authContext';
+import { AuthProvider } from './Context/authContext';
 
 const App = () => {
   return (
