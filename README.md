@@ -1,3 +1,31 @@
+# Sample of some skills
+
+This is a project I use to apply skills I'm trying to learn to further my knowledge. It also serves as a demo to see skills I’m comfortable with. This is in no way a finished project and is constantly evolving. As I think of new features that would be challenging or fun to implement I create a branch and try to implement them. 
+
+It’s important to not just build or design a new feature, but to force myself to integrate it into an existing project, since rarely a project is starting from scratch. This forces me to comment my code and save my future self (or any future developer) from struggles I face when writing the initial code. 
+
+Currently:
+
+* React
+  * React Router
+  * App wide state management with useContext and useReducer
+  * React Hooks
+    * useState
+    * useEffect
+    * useContext
+    * useReducer
+  * GraphQL
+  * Bootstrap
+  * Stripe
+  * Aws
+    * Amplify
+    * Rest API
+    * DynamoDB
+    * Cognito
+
+I’ve tried to not necessarily follow a build guide and rather build from “thin air”. This allows me to overcome obstacles I would face in a real world application.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
