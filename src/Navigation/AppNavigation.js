@@ -6,6 +6,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import { checkAuth } from "../Context/authServices";
 import { useAuthDispatch } from "../Context/authContext";
 import PrivateRoute from "./PrivateRoute";
+import AppFooter from "../Components/AppFooter";
 
 const history = createBrowserHistory();
 
@@ -18,13 +19,12 @@ const AppNavigation = () => {
       try {
         const user = await checkAuth();
         const { jwtToken } = user;
-        email = user.attributes.email
-        console.log('user :' ,user ); //eslint disable line
+        email = user.attributes.email;
         token = jwtToken;
       } catch (e) {
         console.warn("Warning", e);
       }
-      dispatch({ type: "RESTORE_TOKEN", token, userEmail: email});
+      dispatch({ type: "RESTORE_TOKEN", token, userEmail: email });
     };
 
     bootstrapAsync();
@@ -34,7 +34,6 @@ const AppNavigation = () => {
       <AppHeader />
       <Switch>
         {Routes.map((route, i) => {
-          console.log("route privte?" , route.private)
           return route.private ? (
             <PrivateRoute key={i} {...route} />
           ) : (
@@ -42,6 +41,7 @@ const AppNavigation = () => {
           );
         })}
       </Switch>
+      <AppFooter />
     </Router>
   );
 };

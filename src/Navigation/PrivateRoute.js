@@ -4,7 +4,6 @@ import { useAuthState } from "../Context/authContext";
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { userEmail } = useAuthState();
-  console.log('userEmail :', userEmail); //eslint disable line
   return (
     <Route
       {...rest}
