@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { createTodo } from "../../graphql/mutations";
-import { listTodos } from "../../graphql/queries";
-import awsExports from "../../aws-exports";
+import { createTodo } from "../graphql/mutations";
+import { listTodos } from "../graphql/queries";
+import awsExports from "../aws-exports";
 
 Amplify.configure(awsExports);
 

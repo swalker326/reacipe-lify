@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import {Container, Button} from 'react-bootstrap'
-import "./PayButton.css";
+import "./PayButton.scss";
 import PropTypes from "prop-types";
 import { API } from "aws-amplify";
 import { useStripe } from "@stripe/react-stripe-js";

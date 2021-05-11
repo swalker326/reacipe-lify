@@ -89,8 +89,8 @@ const Products = () => {
           amount={selectedProduct.price}
           currency="usd"
           quantity={1}
-          success_url="https://example.com/success?session_id={CHECKOUT_SESSION_ID}" // Where to redirect if success
-          cancel_url="https://example.com/cancel" // Where to go if payment canceled
+          success_url="http://localhost:3000/" // Where to redirect if success
+          cancel_url="http://localhost:3000/products" // Where to go if payment canceled
         />
       ) : null}
       {/* <Row>
@@ -100,18 +100,6 @@ const Products = () => {
       </Row> */}
     </Container>
   );
-};
-
-const styles = {
-  productCard: {
-    height: "400px",
-    color: "red",
-    cursor: "pointer",
-    "&:hover": {
-      textDecoration: "underline",
-      color: "blue",
-    },
-  },
 };
 
 export default Products;
