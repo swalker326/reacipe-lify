@@ -1,5 +1,4 @@
 export const authReducer = (prevState, action) => {
-  console.log('reducer :', action ); //eslint disable line
   switch (action.type) {
     case 'RESTORE_TOKEN':
       return {
