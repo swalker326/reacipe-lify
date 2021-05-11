@@ -51,7 +51,7 @@ const Login = () => {
       />
       <Row>
         <Col>
-          <Container>
+          <Container fluid='md' style={styles.container}>
             <Form className="mw-50 ml-5 mr-5" onSubmit={(e) => handleSubmit(e)}>
               <h4>Sign in</h4>
               <Form.Control
@@ -90,3 +90,9 @@ const Login = () => {
 };
 
 export default Login;
+
+const styles = {
+  container: {
+    maxWidth: 700,
+  }
+}

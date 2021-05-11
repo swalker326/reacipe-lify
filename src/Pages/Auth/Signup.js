@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form, Button, Col, Row } from "react-bootstrap";
 import { signUp, signIn, confirmSignUp } from "../../Context/authServices";
 import { useAuthDispatch } from "../../Context/authContext";
 import { Redirect } from "react-router";
@@ -27,7 +27,7 @@ const Signup = () => {
       .catch((err) => {
         setLoading(false);
         setError(err.message);
-        console.log('err :', err ); //eslint disable line
+        console.log("err :", err); //eslint disable line
       });
   };
   const confirm = () => {
@@ -70,42 +70,58 @@ const Signup = () => {
 
   if (signed && confirmed) return <Redirect to="/profile" />;
   return (
-    <Container className="Signup">
-      <h4>Sign Up</h4>
-      {!signed ? (
-        <Form onSubmit={(e) => handleSubmit(e)}>
-          <Form.Control
-            className="mt-3 mb-3"
-            name="email"
-            onChange={(e) => handleInputChange(e)}
-            placeholder="Email"
-            // isValid={true}
-          />
-          <Form.Control
-            className="mt-3 mb-3"
-            name="password"
-            onChange={(e) => handleInputChange(e)}
-            type="password"
-            placeholder="Password"
-            // isValid={true}
-          />
-          <Button type="submit">Sign Up</Button>
-          {error ? <Container><span>Error</span> {error}</Container> : null}
-        </Form>
-      ) : (
-        <Form onSubmit={(e) => handleVerification(e)}>
-          <h4>Confirm Email</h4>
-          <Form.Control
-            className="mt-3 mb-3"
-            name="code"
-            onChange={(e) => handleInputChange(e)}
-            placeholder="Verification Code"
-          />
-          <Button type="submit">Confirm</Button>
-        </Form>
-      )}
+    <Container className="Signup" style={styles.container}>
+      <Col>
+        <Row>
+          <h4>Sign Up</h4>
+          <Container>
+            {!signed ? (
+              <Form onSubmit={(e) => handleSubmit(e)}>
+                <Form.Control
+                  className="mt-3 mb-3"
+                  name="email"
+                  onChange={(e) => handleInputChange(e)}
+                  placeholder="Email"
+                  // isValid={true}
+                />
+                <Form.Control
+                  className="mt-3 mb-3"
+                  name="password"
+                  onChange={(e) => handleInputChange(e)}
+                  type="password"
+                  placeholder="Password"
+                  // isValid={true}
+                />
+                <Button type="submit">Sign Up</Button>
+                {error ? (
+                  <Container>
+                    <span>Error</span> {error}
+                  </Container>
+                ) : null}
+              </Form>
+            ) : (
+              <Form onSubmit={(e) => handleVerification(e)}>
+                <h4>Confirm Email</h4>
+                <Form.Control
+                  className="mt-3 mb-3"
+                  name="code"
+                  onChange={(e) => handleInputChange(e)}
+                  placeholder="Verification Code"
+                />
+                <Button type="submit">Confirm</Button>
+              </Form>
+            )}
+          </Container>
+        </Row>
+      </Col>
     </Container>
   );
 };
 
 export default Signup;
+
+const styles = {
+  container: {
+    maxWidth: 700,
+  },
+};

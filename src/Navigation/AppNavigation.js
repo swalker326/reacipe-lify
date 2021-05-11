@@ -7,6 +7,7 @@ import { checkAuth } from "../Context/authServices";
 import { useAuthDispatch } from "../Context/authContext";
 import PrivateRoute from "./PrivateRoute";
 import AppFooter from "../Components/AppFooter";
+import { Col, Container } from "react-bootstrap";
 
 const history = createBrowserHistory();
 
@@ -30,18 +31,24 @@ const AppNavigation = () => {
     bootstrapAsync();
   }, [dispatch]);
   return (
-    <Router history={history}>
-      <AppHeader />
-      <Switch>
-        {Routes.map((route, i) => {
-          return route.private ? (
-            <PrivateRoute key={i} {...route} />
-          ) : (
-            <Route key={i} {...route} />
-          );
-        })}
-      </Switch>
-      <AppFooter />
+    <Router className="AppNav" history={history}>
+      <Container
+        className="no-gutters d-flex justify-content-between"
+        style={{ height: "100%", paddingRight: 0, paddingLeft: 0, flexDirection: 'column'}}
+        fluid
+      >
+        <AppHeader />
+        <Switch>
+          {Routes.map((route, i) => {
+            return route.private ? (
+              <PrivateRoute key={i} {...route} />
+            ) : (
+              <Route key={i} {...route} />
+            );
+          })}
+        </Switch>
+        <AppFooter />
+      </Container>
     </Router>
   );
 };
