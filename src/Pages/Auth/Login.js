@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Col, Row, Form, Button } from "react-bootstrap";
-import { signIn, signOut } from "../../Context/authServices";
+import { signIn } from "../../Context/authServices";
 import { useAuthDispatch, useAuthState } from "../../Context/authContext";
 import Loading from "react-fullscreen-loading";
 import { Redirect } from "react-router";
@@ -90,9 +90,3 @@ const Login = () => {
 };
 
 export default Login;
-
-const styles = {
-  formInput: {
-    margin: "10px 0",
-  },
-};

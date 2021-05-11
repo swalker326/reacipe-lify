@@ -71,7 +71,7 @@ const Signup = () => {
   if (signed && confirmed) return <Redirect to="/profile" />;
   return (
     <Container className="Signup">
-      <h4>Signed Up</h4>
+      <h4>Sign Up</h4>
       {!signed ? (
         <Form onSubmit={(e) => handleSubmit(e)}>
           <Form.Control
