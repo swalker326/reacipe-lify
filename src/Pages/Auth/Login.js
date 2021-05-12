@@ -3,8 +3,7 @@ import { Container, Col, Row, Form, Button } from "react-bootstrap";
 import { signIn } from "../../Context/authServices";
 import { useAuthDispatch, useAuthState } from "../../Context/authContext";
 import Loading from "react-fullscreen-loading";
-import { Redirect } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useAuthDispatch();
@@ -51,8 +50,8 @@ const Login = () => {
       />
       <Row>
         <Col>
-          <Container>
-            <Form className="mw-50 ml-5 mr-5" onSubmit={(e) => handleSubmit(e)}>
+          <Container style={{ maxWidth: "600px" }}>
+            <Form onSubmit={(e) => handleSubmit(e)}>
               <h4>Sign in</h4>
               <Form.Control
                 className="mt-3 mb-3"
