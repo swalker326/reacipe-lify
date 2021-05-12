@@ -40,6 +40,9 @@ const SplashScreen = (props) => {
             <li>
               <Link to="/login"> Login</Link>
             </li>
+            <li>
+              <Link to="/profile">Profile - Private Route, will redirect if not logged in</Link>
+            </li>
           </ul>
         </Container>
       </Row>
