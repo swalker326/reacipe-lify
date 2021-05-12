@@ -30,20 +30,30 @@ const AppNavigation = () => {
     bootstrapAsync();
   }, [dispatch]);
   return (
-    <Router history={history}>
-      <AppHeader />
-      <Switch>
-        {Routes.map((route, i) => {
-          return route.private ? (
-            <PrivateRoute key={i} {...route} />
-          ) : (
-            <Route key={i} {...route} />
-          );
-        })}
-      </Switch>
-      <AppFooter />
-    </Router>
+    <div style={styles.container} className="d-flex">
+      <Router history={history}>
+        <AppHeader />
+        <Switch>
+          {Routes.map((route, i) => {
+            return route.private ? (
+              <PrivateRoute key={i} {...route} />
+            ) : (
+              <Route key={i} {...route} />
+            );
+          })}
+        </Switch>
+        <AppFooter />
+      </Router>
+    </div>
   );
 };
 
 export default AppNavigation;
+
+const styles = {
+  container: {
+    flexDirection: "column",
+    height: "100%",
+    justifyContent: "space-between",
+  },
+};
