@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import Amplify, { API, graphqlOperation } from "aws-amplify";
-import { createTodo } from "../graphql/mutations";
+import { createTodo, deleteTodo } from "../graphql/mutations";
 import { listTodos } from "../graphql/queries";
 import awsExports from "../aws-exports";
 
@@ -9,7 +9,7 @@ Amplify.configure(awsExports);
 
 const initialState = { name: "", description: "" };
 
-const Todos = (props) => {
+const Todos = () => {
   const [formState, setFormState] = useState(initialState);
   const [todos, setTodos] = useState([]);
 
@@ -42,6 +42,15 @@ const Todos = (props) => {
       console.log("error createing todo:", err);
     }
   };
+  const removeTodo = async (todoId) => {
+    try {
+      await API.graphql(
+        graphqlOperation(deleteTodo, { input: { id: todoId } })
+      ).then(() => fetchTodos())
+    } catch (err) {
+      console.log("Error delete todo: ", err);
+    }
+  };
 
   return (
     <Container fluid="md" style={styles.container}>
@@ -55,21 +64,33 @@ const Todos = (props) => {
         />
         <Form.Control
           className="mt-1 mb-1"
+          as="textarea"
+          rows={5}
           onChange={(event) => setInput("description", event.target.value)}
           placeholder="Description"
           value={formState.description}
+          style={{ resize: "none" }}
         />
       </Form>
       <Button className="mt-3 mb-3" variant="primary" onClick={addTodo}>
         Create Todo
       </Button>
       <h3>To Dos:</h3>
-      {todos.map((todo, index) => (
-        <div key={todo.id ? todo.id : index} style={styles.todo}>
-          <p style={styles.todoName}>{todo.name}</p>
-          <p style={styles.todoDescription}>{todo.description}</p>
-        </div>
-      ))}
+      {todos
+        .sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1))
+        .map((todo, index) => (
+          <div key={todo.id ? todo.id : index} style={styles.todo}>
+            <Button
+              variant="danger"
+              style={styles.closeButton}
+              onClick={() => removeTodo(todo.id)}
+            >
+              X
+            </Button>
+            <p style={styles.todoName}>{todo.name}</p>
+            <p style={styles.todoDescription}>{todo.description}</p>
+          </div>
+        ))}
     </Container>
   );
 };
@@ -83,7 +104,16 @@ const styles = {
     justifyContent: "center",
     padding: 20,
   },
-  todo: { marginBottom: 15 },
+  closeButton: {
+    float: "right",
+    padding: 4,
+  },
+  todo: {
+    marginBottom: 15,
+    border: "1px solid #b9b9b9",
+    padding: "30px 15px",
+    borderRadius: 10,
+  },
   input: {
     border: "none",
     backgroundColor: "#ddd",
